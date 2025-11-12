@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:football_news/screens/menu.dart';
 // PASTIKAN NAMA FILE DI SINI BENAR: newslist_form.dart
 import 'package:football_news/screens/newslist_form.dart'; 
+import 'package:football_news/screens/news_entry_list.dart';
+
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -57,19 +59,18 @@ class LeftDrawer extends StatelessWidget {
           ),
           // Halaman Add News (menggunakan push)
           ListTile(
-            leading: const Icon (Icons.post_add),
-            title: const Text('Add News'),
+            leading: const Icon(Icons.add_reaction_rounded),
+            title: const Text('News List'),
             onTap: () {
-              // Navigasi ke NewsFormPage
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const NewsFormPage(),
-                ),
-              );
+                // Route to news list page
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const NewsEntryListPage()),
+                );
             },
-          ),
+        ),
         ],
+        
       ),
     );
   }
